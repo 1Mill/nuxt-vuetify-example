@@ -62,4 +62,5 @@ module.exports = {
     webpack: {
       poll: true
     }
+  }
 }
