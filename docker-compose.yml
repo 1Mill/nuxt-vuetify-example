@@ -4,7 +4,7 @@ services:
   client:
     build: .
     volumes:
-      - ./client:/app
+      - ./:/app
     ports:
       - 4000:3000
     command: yarn nuxt -PORT=3000 -HOST=0.0.0.0
