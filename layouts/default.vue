@@ -1,7 +1,10 @@
+<script>
+import TheFooter from '~/components/TheFooter'
 import TheNav from '~/components/TheNav'
 
 export default {
 	components: {
+		TheFooter,
 		TheNav
 	}
 }
@@ -13,6 +16,8 @@ export default {
 			<the-nav/>
 
 			<nuxt/>
+
+			<the-footer/>
 		</v-app>
 	</div>
 </template>
