@@ -42,7 +42,16 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios'
   ],
+
+  /*
+  ** Configure axios module
+  */
+  axios: {
+    baseURL: '/',
+    retry: { retries: 3 }
+  },
 
   /*
   ** Build configuration
