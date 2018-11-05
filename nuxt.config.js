@@ -57,6 +57,11 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor: [
+      'axios',
+      'vuetify'
+    ],
+
     /*
     ** You can extend webpack config here
     */
