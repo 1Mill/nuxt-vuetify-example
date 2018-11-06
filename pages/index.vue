@@ -10,7 +10,7 @@ export default {
 
 <template>
 	<v-container grid-list-md>
-		<v-layout column>
+		<v-layout>
 			<v-flex>
 				<v-text-field label='Search iTunes'
 				v-model='search'
