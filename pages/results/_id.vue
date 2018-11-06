@@ -35,11 +35,11 @@ export default {
 			Results for {{ $route.params.id }}
 		</h1>
 
-		<v-container
-		v-for='(album, index) in albums' :key='index'
-		>
-			<v-layout>
-				<v-flex>
+		<v-container grid-list-xl>
+			<v-layout row wrap>
+				<v-flex xs12 md6 lg4
+				v-for='(album, index) in albums' :key='index'
+				>
 					<album-card
 					:title="album.collectionCensoredName"
 					:image="album.artworkUrl100"
