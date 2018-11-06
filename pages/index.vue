@@ -4,6 +4,11 @@ export default {
 		return {
 			search: ''
 		}
+	},
+	methods: {
+		submit () {
+			console.log('Form was submitted!')
+		}
 	}
 }
 </script>
@@ -12,9 +17,11 @@ export default {
 	<v-container grid-list-md>
 		<v-layout>
 			<v-flex>
-				<v-text-field label='Search iTunes'
-				v-model='search'
-				/>
+				<v-form @submit.prevent='submit'>
+					<v-text-field label='Search iTunes'
+					v-model='search'
+					/>
+				</v-form>
 			</v-flex>
 		</v-layout>
 	</v-container>
