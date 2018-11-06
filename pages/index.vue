@@ -7,7 +7,7 @@ export default {
 	},
 	methods: {
 		submit () {
-			console.log('Form was submitted!')
+			this.$router.push(`/results/${this.search}`)
 		}
 	}
 }
