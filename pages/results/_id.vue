@@ -1,7 +1,12 @@
 <script>
 import { mapState } from 'vuex'
 
+import AlbumCard from '~/components/AlbumCard'
+
 export default {
+	components: {
+		AlbumCard
+	},
 	async asyncData ({ app, params, store }) {
 	 	await app.$axios.$get(`/search?term=${params.id}&entity=album`)
 			.then(res => {
@@ -15,6 +20,11 @@ export default {
 		albumExists () {
 			return this.albums.length > 0
 		}
+	},
+	methods: {
+		picker (index) {
+			return index % 2 == 0 ? 'red' : 'blue'
+		}
 	}
 }
 </script>
@@ -25,12 +35,22 @@ export default {
 			Results for {{ $route.params.id }}
 		</h1>
 
-		<div
-		v-if='albumExists'
+		<v-container
+		v-for='(album, index) in albums' :key='index'
 		>
-			{{ albums }}
-		</div>
+			<v-layout>
+				<v-flex>
+					<album-card
+					:title="album.collectionCensoredName"
+					:image="album.artworkUrl100"
+					:artistName="album.artistName"
+					:url="album.artistViewUrl"
+					:color="picker(index)"
+					/>
+				</v-flex>
+			</v-layout>
+		</v-container>
 
-		<h1 v-else>Could not find Album</h1>
+		<h1 v-if=!albumExists>Could not find Album</h1>
 	</div>
 </template>
