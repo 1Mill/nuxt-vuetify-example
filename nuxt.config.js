@@ -49,7 +49,7 @@ module.exports = {
   ** Configure axios module
   */
   axios: {
-    baseURL: '/',
+    baseURL: 'https://itunes.apple.com/',
     retry: { retries: 3 }
   },
 
